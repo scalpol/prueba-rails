@@ -1,0 +1,16 @@
+<% @todos.each do |todo| %>
+  <div class='card text-center' style=>
+    <div class='card-body'>
+      <h5><%= link_to todo.description, todo_path(todo) %></h5>
+      <% if todo.completed == false %>
+        <%= link_to 'Marcar como completado', todo_completed_path(todo), type: 'button', class: 'btn btn-success' %>
+      <% end %>
+      <%= link_to 'Editar', todo_edit_path(todo),type: 'button', class: 'btn btn-secondary' %>
+      <%= link_to 'Eliminar', todo_path(todo), type: 'button', class: 'btn btn-danger', method: :delete %>
+    </div>
+  </div>
+<% end %>
+<br>
+<div class='text-center'>
+  <%= link_to 'Agregar nueva tarea', todos_new_path, type: 'button', class: 'btn btn-warning' %>
+</div>

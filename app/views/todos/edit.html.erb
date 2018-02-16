@@ -1,0 +1,5 @@
+<%= form_with(model: @todo, local:true) do |f| %>
+  <%= f.label :descripción_de_la_tarea %>
+  <%= f.text_field :description %>
+  <%= f.submit 'Actualizar' %>
+<% end %>
